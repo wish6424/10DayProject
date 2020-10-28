@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <link rel="stylesheet" href="style.css">
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hot Spot</title>
+        <script defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5btCWc1NaPxL1zXc9IztDb-IsRvvxNtg&callback=initMap">
+        </script>
+        <script>
+            let map;
+
+            function initMap() {
+                let location = {lat: 13.7000, lng: 100.4667};
+                map = new google.maps.Map(document.getElementById("map"), {
+                    zoom: 15,
+                    center: location
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <h1>its working!!!</h1>
+        <div id="map"></div>
+        <div>
+            <form id="submit_form" method="post" action="/add" >
+                <label for="placeName">Place Name : </label>
+                <input type="text" id="placeName" name="placeName"><br>
+
+                <label for="desc">Description : </label>
+                <input type="text" id="desc" name="desc"><br>
+
+                <label for="lat">Latitude</label>
+                <input type="text" id="lat" name="lat">
+                <label for="long">Longitude : </label>
+                <input type="text" id="long" name="long"><br>
+
+                <label for="time">Time :</label>
+                <input type="time" id="time" name="time">
+
+                <button><submit>ADD</submit></button>
+                <button><submit>DELETE</submit></button>
+
+              </form>
+        </div>
+        <h1>wtf</h1>
+    </body>
+</html> 
